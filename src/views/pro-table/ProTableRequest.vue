@@ -131,7 +131,7 @@ const getTableData = async (params: any) => {
         const random = Math.random();
         return {
           id: i,
-          name: "张三" + i + (i === 0 ? "很长很长很长很长很长很长的姓名" : ""),
+          name: "李四" + i + (i === 0 ? "很长很长很长很长很长很长的姓名" : ""),
           address: "深LALALA圳" + i,
           info: {
             age: Math.floor(random * 100),
