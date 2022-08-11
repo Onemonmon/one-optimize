@@ -13,7 +13,7 @@ const handleMenuClick = ({ index }: MenuItemRegistered) => {
 
 <template>
   <el-container>
-    <el-header class="layout-header">Pro Components</el-header>
+    <el-header class="layout-header">test</el-header>
     <el-container class="middle-layout-container">
       <el-aside width="240px">
         <el-menu default-active="2" class="el-menu-vertical-demo">

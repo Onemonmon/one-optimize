@@ -1,14 +1,18 @@
 <script lang="ts" setup>
 import { ref, reactive, computed, onMounted } from "vue";
 import { ElMessage } from "element-plus";
-import type { ProTableInstance } from "one-components-vue3";
+import type {
+  ProTableColumnPropsType,
+  ProTableInstance,
+  TablePropsType,
+} from "one-components-vue3";
 
 const options = ref([
   { label: "抽烟", value: "01" },
   { label: "喝酒", value: "02" },
   { label: "烫头", value: "03" },
 ]);
-const columns = computed(() => [
+const columns = computed<ProTableColumnPropsType[]>(() => [
   {
     prop: "selection",
     type: "selection",
@@ -105,7 +109,7 @@ const columns = computed(() => [
     width: 120,
   },
 ]);
-const tableProps = reactive({ rowKey: "id", data: [] });
+const tableProps = reactive<TablePropsType>({ rowKey: "id", data: [] });
 const tableRef = ref<ProTableInstance | null>(null);
 const getTableData = async () => {
   const data = new Array(30).fill(0).map((n, i) => {

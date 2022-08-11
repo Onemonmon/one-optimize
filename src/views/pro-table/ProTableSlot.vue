@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 import { ref, reactive, computed } from "vue";
 import { ElMessage } from "element-plus";
+import type { ProTableColumnPropsType } from "one-components-vue3";
 
 const options = ref([
   { label: "抽烟", value: "01" },
   { label: "喝酒", value: "02" },
   { label: "烫头", value: "03" },
 ]);
-const columns = computed(() => [
+const columns = computed<ProTableColumnPropsType[]>(() => [
   {
     prop: "name",
     label: "姓名",
@@ -93,7 +94,7 @@ const columns = computed(() => [
   },
 ]);
 const params = reactive({ outterParam: "001" });
-const getTableData = async (params) => {
+const getTableData = async (params: any) => {
   console.log("获取表格数据，参数：", params);
   const res = await new Promise((resolve) => {
     setTimeout(() => {

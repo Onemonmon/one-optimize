@@ -20,5 +20,6 @@ module.exports = {
     "space-before-function-paren": "off",
     "prefer-promise-reject-errors": "off",
     "@typescript-eslint/no-var-requires": "off",
+    "no-undef": "off",
   },
 };

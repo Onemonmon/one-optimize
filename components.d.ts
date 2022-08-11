@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BarChart: typeof import('./src/components/BarChart.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBadge: typeof import('element-plus/es')['ElBadge']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -18,6 +19,10 @@ declare module '@vue/runtime-core' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
+    LineChart: typeof import('./src/components/LineChart.vue')['default']
+    PieChart: typeof import('./src/components/PieChart.vue')['default']
+    ProInput: typeof import('one-components-vue3/dist/one-components.es.js')['ProInput']
+    ProTable: typeof import('one-components-vue3/dist/one-components.es.js')['ProTable']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

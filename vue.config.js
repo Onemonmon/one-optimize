@@ -1,13 +1,13 @@
 const Components = require("unplugin-vue-components/webpack");
 const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
-const ElementPlus = require("unplugin-element-plus/webpack");
 const { resolve } = require("path");
 const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+const { OneComponentsResolver } = require("one-components-resolver");
 
 const resolvePath = (path) => resolve(__dirname, path);
 
 module.exports = {
-  devServer: { port: 9000, open: true },
+  devServer: { port: 9000 },
   configureWebpack: {
     resolve: {
       alias: {
@@ -15,8 +15,9 @@ module.exports = {
       },
     },
     plugins: [
-      // ElementPlus(),
-      Components({ resolvers: [ElementPlusResolver()] }),
+      Components({
+        resolvers: [ElementPlusResolver(), OneComponentsResolver()],
+      }),
     ],
   },
   chainWebpack: (config) => {

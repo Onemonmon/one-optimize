@@ -1,13 +1,17 @@
 <script lang="ts" setup>
 import { ref, reactive, computed } from "vue";
 import { ElMessage } from "element-plus";
+import type {
+  EditableConfigType,
+  ProTableColumnPropsType,
+} from "one-components-vue3";
 
 const options = ref([
   { label: "抽烟", value: "01" },
   { label: "喝酒", value: "02" },
   { label: "烫头", value: "03" },
 ]);
-const columns = computed(() => [
+const columns = computed<ProTableColumnPropsType[]>(() => [
   {
     prop: "name",
     label: "姓名",
@@ -104,7 +108,7 @@ const columns = computed(() => [
     width: 180,
   },
 ]);
-const handleSave = async (row) => {
+const handleSave: EditableConfigType["onSave"] = async (row) => {
   try {
     await new Promise((resolve, reject) =>
       setTimeout(() => {
@@ -117,10 +121,14 @@ const handleSave = async (row) => {
     return Promise.reject();
   }
 };
-const handleValuesChange = (row, key, value) => {
+const handleValuesChange: EditableConfigType["onValuesChange"] = (
+  row,
+  key,
+  value
+) => {
   console.log(row, key, value);
 };
-const editableConfig = reactive({
+const editableConfig = reactive<EditableConfigType>({
   editable: true,
   editableKeys: [1, 2, 3],
   defaultCreateRow: { age: 18, gender: "male", major: "01" },
