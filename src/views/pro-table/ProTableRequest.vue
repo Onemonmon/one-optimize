@@ -132,7 +132,7 @@ const getTableData = async (params: any) => {
         return {
           id: i,
           name: "李四" + i + (i === 0 ? "很长很长很长很长很长很长的姓名" : ""),
-          address: "深LALALA圳" + i,
+          address: "深圳" + i,
           info: {
             age: Math.floor(random * 100),
             gender: random > 0.5 ? "female" : "male",
