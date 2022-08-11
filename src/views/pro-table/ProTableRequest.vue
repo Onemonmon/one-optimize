@@ -124,7 +124,7 @@ const columns = computed<ProTableColumnPropsType[]>(() => [
 
 const params = reactive({ outterParam: "001" });
 const getTableData = async (params: any) => {
-  console.log("获取表格数据，参数：", params);
+  console.log("获取表格数据，参数是：", params);
   const res = await new Promise((resolve) => {
     setTimeout(() => {
       const data = new Array(10).fill(0).map((n, i) => {
